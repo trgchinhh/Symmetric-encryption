@@ -2,6 +2,8 @@
 
 Chương trình nhỏ mô phỏng thuật toán mã hóa nhỏ tự build
 
+![Demo ảnh](img/demo.png)
+
 ---
 
 ## Giới thiệu
