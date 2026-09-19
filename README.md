@@ -1,18 +1,14 @@
 # TRIỂN KHAI MÃ HÓA ĐỐI XỨNG BẰNG C#
 
-**TÁC GIẢ: TRƯỜNG CHINH**
-
 Chương trình nhỏ mô phỏng thuật toán mã hóa nhỏ tự build
 
 ---
 
 ## Giới thiệu
 
-- **Mã hóa:** là khái niệm luôn có 2 chiều là mã hóa <-> giải mã, có khóa để giải mã (key), độ dài không cố định
-  - Dùng để trao đổi dữ liệu mà không sợ bên thứ 3 đọc được
+- **Mã hóa:** là khái niệm luôn có 2 chiều là mã hóa <-> giải mã, có khóa để giải mã (key), độ dài không cố định. Dùng để trao đổi dữ liệu mà không sợ bên thứ 3 đọc được
 
-- **Hàm băm (hash):** là khái niệm 1 chiều, độ dài không đổi tùy thuật toán sẽ cho ra độ dài cố định khác nhau
-  - Dùng để kiểm tra tính toàn vẹn dữ liệu
+- **Hàm băm (hash):** là khái niệm 1 chiều, độ dài không đổi tùy thuật toán sẽ cho ra độ dài cố định khác nhau. Dùng để kiểm tra tính toàn vẹn dữ liệu
 
 ---
 
@@ -109,3 +105,20 @@ MÃ HÓA       │     GIẢI MÃ
  - bước 3    │    - bước 2
  - bước 4    │    - bước 1
 ```
+
+## Cách cài đặt 
+```bash
+git clone  https://github.com/trgchinhh/mophong-mahoadoixung.git
+cd .\mophong-mahoadoixung
+dotnet run
+```
+
+---
+
+## Tác giả
+**Nguyễn Trường Chinh (NTC++)**<br>
+**GitHub:** [https://github.com/trgchinhh](https://github.com/trgchinhh)
+
+---
+
+> 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
