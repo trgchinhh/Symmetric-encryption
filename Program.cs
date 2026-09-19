@@ -1,4 +1,5 @@
-﻿/*
+﻿#region chú thích tài liệu
+/*
 ───────────────────────────────────────
   TRIỂN KHAI MÃ HÓA ĐỐI XỨNG BẰNG C# 
         TÁC GIẢ: TRƯỜNG CHINH 
@@ -80,28 +81,59 @@ Chương trình nhỏ mô phỏng thuật toán mã hóa nhỏ tự build
       - bước 4     │    - bước 1
 
 */
+#endregion
 
 public class Program {
-    public static void nhap_noidung(
-        string loai, out string noidung, out string khoa1, out string khoa2, out int vonglap)
-    {
-        noidung = ""; khoa1 = ""; khoa2 = "";
+    public static bool nhap_noidung(out string noidung){
+        Console.Write("\t(?) Nhập nội dung: "); 
+        noidung = Console.ReadLine()!;
+        if(noidung.Length == 0){
+            Console.WriteLine("\t(!) Không để nội dung trống !");
+            return false;
+        }                
+        return true; 
+    }
+
+    public static bool nhap_khoa(out string khoa1, out string khoa2, out int vonglap){
+        khoa1 = ""; 
+        khoa2 = ""; 
         vonglap = 0;
-        if(loai == "Mahoa" || loai == "Giaima"){
-            Console.Write("\t(?) Nhập nội dung: "); 
-            noidung = Console.ReadLine()!;
-            Console.Write("\t(?) Nhập khóa 1: "); 
-            khoa1 = Console.ReadLine()!;
-            Console.Write("\t(?) Nhập khóa 2: "); 
-            khoa2 = Console.ReadLine()!;
-            Console.Write("\t(?) Nhập số lần lặp: "); 
-            int.TryParse(Console.ReadLine()!, out vonglap);            
-        } else if(loai == "Hash") {
-            Console.Write("\t(?) Nhập nội dung: "); 
-            noidung = Console.ReadLine()!;            
-        } else {
-            Console.WriteLine("(!) Không hỗ trợ loại này !!!");
+        Console.Write("\t(?) Nhập khóa 1: "); 
+        khoa1 = Console.ReadLine()!;
+        if(khoa1.Length == 0){
+            Console.WriteLine("\t(!) Không để khóa trống !");
+            return false;
         }
+        Console.Write("\t(?) Nhập khóa 2: "); 
+        khoa2 = Console.ReadLine()!;
+        if(khoa2.Length == 0){
+            Console.WriteLine("\t(!) Không để khóa trống !");
+            return false;
+        }
+        Console.Write("\t(?) Nhập số lần lặp: "); 
+        int.TryParse(Console.ReadLine()!, out vonglap);
+        if(vonglap < 1){
+            Console.WriteLine("\t(!) Vòng lặp phải lớn hơn 1 !");
+            return false;
+        }   
+        return true;
+    }
+
+    public static bool nhap_duongdan(out string duongdan_vao, out string duongdan_ra){
+        duongdan_vao = "";
+        duongdan_ra  = "";
+        Console.Write("\t(?) Đường dẫn file vào: ");
+        duongdan_vao = Console.ReadLine()!;
+        if(!File.Exists(duongdan_vao)){
+            Console.WriteLine("\t(!) File {0} không tồn tại !", duongdan_vao);
+            return false;
+        }
+        Console.Write("\t(?) Đường dẫn file ra: ");
+        duongdan_ra = Console.ReadLine()!;
+        if(File.Exists(duongdan_ra)){
+            Console.WriteLine("\t(!) File {0} đã tồn tại !", duongdan_ra);
+        }
+        return true;
     }
 
     public static void dung_chuongtrinh(){
@@ -111,41 +143,65 @@ public class Program {
 
     public static void Main(){
 
-        string noidung, khoa1, khoa2;
-        int vonglap;
+        // biến dùng chung 
+        string noidung = "", khoa1 = "", khoa2 = "";
+        int vonglap = 0;
+        string duongdan_vao = "", duongdan_ra = "";
 
-        string menu = @"MÔ PHỎNG MÃ HÓA ĐỐI XỨNG
+        string menu = @"┌──────────────────────────────┐
+│       Mã hóa ứng dụng        │
+│ Mô phỏng mã hóa đối xứng     │
+│ Tác giả: Trường Chinh        │
+│ Github: Github.com/trgchinhh │
+└──────────────────────────────┘
 
 [01] Mã hóa nội dung
 [02] Giải mã nội dung
 [03] Hash nội dung
-[04] Thoát
+[04] Mã hóa nội dung file
+[05] Giải mã nội dung file 
+[06] Thoát
         ";
         while(true){
             Console.Clear();
             Console.WriteLine(menu);
-            Console.Write("[?] Lựa chọn: ");
+            Console.Write("[-] Lựa chọn: ");
             int luachon;
             int.TryParse(Console.ReadLine()!, out luachon);
             if(luachon == 1){
                 Console.WriteLine("\n[Mã hóa]");
-                nhap_noidung("Mahoa", out noidung, out khoa1, out khoa2, out vonglap);
-                byte[] vanbanmahoa = MaHoa.mahoa(noidung, khoa1, khoa2, vonglap);
-                MaHoa.in_mahoa(vanbanmahoa);
+                if(nhap_noidung(out noidung) && nhap_khoa(out khoa1, out khoa2, out vonglap)){
+                    byte[] vanbanmahoa = MaHoa.mahoa(noidung, khoa1, khoa2, vonglap);
+                    MaHoa.in_mahoa(vanbanmahoa);    
+                }
             } 
             else if(luachon == 2){
                 Console.WriteLine("\n[Giải mã]");
-                nhap_noidung("Giaima", out noidung, out khoa1, out khoa2, out vonglap);
-                string noidunggiaima = GiaiMa.giaima(noidung, khoa1, khoa2, vonglap);
-                GiaiMa.in_giaima(noidunggiaima);
+                if(nhap_noidung(out noidung) && nhap_khoa(out khoa1, out khoa2, out vonglap)){
+                    string noidunggiaima = GiaiMa.giaima(noidung, khoa1, khoa2, vonglap);
+                    GiaiMa.in_giaima(noidunggiaima);
+                }
             }
             else if(luachon == 3){
                 Console.WriteLine("\n[Hash]");
-                nhap_noidung("Hash", out noidung, out khoa1, out khoa2, out vonglap);
-                string hash_noidung = Sha256.hash(noidung);
-                Sha256.in_hash(hash_noidung);
+                if(nhap_noidung(out noidung)){
+                    string hash_noidung = Sha256.hash(noidung);
+                    Sha256.in_hash(hash_noidung);                    
+                }
             }
             else if(luachon == 4){
+                Console.WriteLine("\n[Mã hóa file]");
+                if(nhap_duongdan(out duongdan_vao, out duongdan_ra) && nhap_khoa(out khoa1, out khoa2, out vonglap)){
+                    MaHoaFile.mahoa_file(duongdan_vao, duongdan_ra, noidung, khoa1, khoa2, vonglap);
+                }
+            } 
+            else if(luachon == 5){
+                Console.WriteLine("\n[Giải mã file]");
+                if(nhap_duongdan(out duongdan_vao, out duongdan_ra) && nhap_khoa(out khoa1, out khoa2, out vonglap)){
+                    GiaiMaFile.giaima_file(duongdan_vao, duongdan_ra, noidung, khoa1, khoa2, vonglap);
+                }
+            }
+            else if(luachon == 6){
                 break;
             }
             else{

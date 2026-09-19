@@ -33,6 +33,7 @@ public class MaHoa {
     // hàm in mã hóa 
     public static void in_mahoa(byte[] bvanbanmahoa){
         string base64_bvanbanmahoa = Convert.ToBase64String(bvanbanmahoa);
-        Console.WriteLine("\t*[Mã hóa] " + base64_bvanbanmahoa);
+        Console.WriteLine("\n\t*[Mã hóa] " + base64_bvanbanmahoa);
+        
     }
 }
