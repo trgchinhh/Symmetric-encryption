@@ -1,5 +1,21 @@
 # TRIỂN KHAI MÃ HÓA ĐỐI XỨNG BẰNG C#
 
+<p align="center">
+  <img height="100" src="img/logo.png"/>
+</p>
+
+<p align="center">
+  <a href="https://github.com/trgchinhh/mophong-mahoabatdoixung">
+    <img src="https://img.shields.io/badge/Language-C%23-512BD4.svg" alt="Language"/>
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"/>
+  </a>
+  <a href="https://github.com/trgchinhh">
+    <img src="https://img.shields.io/badge/Author-Tr%C6%B0%E1%BB%9Dng%20Chinh-yellow" alt="Author"/>
+  </a>
+</p>
+
 Chương trình nhỏ mô phỏng thuật toán mã hóa nhỏ tự build
 
 ![Demo ảnh](img/demo.png)
