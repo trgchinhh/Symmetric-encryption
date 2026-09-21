@@ -126,8 +126,8 @@ MÃ HÓA       │     GIẢI MÃ
 
 ## Cách cài đặt 
 ```bash
-git clone  https://github.com/trgchinhh/mophong-mahoadoixung.git
-cd .\mophong-mahoadoixung
+git clone  https://github.com/trgchinhh/Symmetric-encryption.git
+cd .\Symmetric-encryption
 dotnet run
 ```
 
