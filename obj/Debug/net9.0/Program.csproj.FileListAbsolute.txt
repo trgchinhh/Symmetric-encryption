@@ -12,3 +12,8 @@ D:\STU\Năm 3\Mã hóa và ứng dụng\Tự viết thuật toán mã hóa đố
 D:\STU\Năm 3\Mã hóa và ứng dụng\Tự viết thuật toán mã hóa đối xứng\obj\Debug\net9.0\Program.pdb
 D:\STU\Năm 3\Mã hóa và ứng dụng\Tự viết thuật toán mã hóa đối xứng\obj\Debug\net9.0\Program.genruntimeconfig.cache
 D:\STU\Năm 3\Mã hóa và ứng dụng\Tự viết thuật toán mã hóa đối xứng\obj\Debug\net9.0\ref\Program.dll
+D:\STU\Năm 3\Mã hóa và ứng dụng\Tự viết thuật toán mã hóa đối xứng\bin\Debug\net9.0\Spectre.Console.dll
+D:\STU\Năm 3\Mã hóa và ứng dụng\Tự viết thuật toán mã hóa đối xứng\bin\Debug\net9.0\Spectre.Console.Ansi.dll
+D:\STU\Năm 3\Mã hóa và ứng dụng\Tự viết thuật toán mã hóa đối xứng\obj\Debug\net9.0\Program.csproj.AssemblyReference.cache
+D:\STU\Năm 3\Mã hóa và ứng dụng\Tự viết thuật toán mã hóa đối xứng\obj\Debug\net9.0\Program.sourcelink.json
+D:\STU\Năm 3\Mã hóa và ứng dụng\Tự viết thuật toán mã hóa đối xứng\obj\Debug\net9.0\Program.csproj.Up2Date

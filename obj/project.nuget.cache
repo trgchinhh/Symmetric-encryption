@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YaiQwLx02gs=",
+  "dgSpecHash": "xMeSumF9nAc=",
   "success": true,
   "projectFilePath": "D:\\STU\\Năm 3\\Mã hóa và ứng dụng\\Tự viết thuật toán mã hóa đối xứng\\Program.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\spectre.console\\0.57.2\\spectre.console.0.57.2.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\spectre.console.ansi\\0.57.2\\spectre.console.ansi.0.57.2.nupkg.sha512"
+  ],
   "logs": []
 }
