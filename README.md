@@ -18,7 +18,7 @@
 
 Chương trình nhỏ mô phỏng thuật toán mã hóa nhỏ tự build
 
-![Demo ảnh](img/demo.png)
+![Demo ảnh](img/demo1.png)
 
 ---
 
